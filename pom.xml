@@ -3,14 +3,14 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>edu.javacourse</groupId>
-    <artifactId>Book_Siva-BeginningSpringBoot2</artifactId>
+    <artifactId>book_1</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>JavaCourse EE Examples</name>
 
     <modules>
-        <module>chapter-01</module>
+        <module>ActiveMQ</module>
     </modules>
 
     <properties>
