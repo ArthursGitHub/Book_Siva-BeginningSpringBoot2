@@ -7,7 +7,7 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-    <name>ActiveMQ</name>
+    <name>Chapter 01</name>
 
     <modules>
         <module>1_springmvc-jpa-demo</module>

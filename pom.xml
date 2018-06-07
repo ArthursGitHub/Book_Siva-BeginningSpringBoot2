@@ -10,7 +10,6 @@
     <name>JavaCourse EE Examples</name>
 
     <modules>
-        <module>ActiveMQ</module>
         <module>chapter-01</module>
     </modules>
 
