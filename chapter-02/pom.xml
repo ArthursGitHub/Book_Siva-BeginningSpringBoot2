@@ -5,16 +5,15 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.apress</groupId>
-    <artifactId>chapter-01</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <artifactId>chapter-02</artifactId>
+    <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-    <name>Chapter-01</name>
-    <description>Introduction to SpringBoot</description>
+    <name>Chapter-02</name>
+    <description>Getting Started with SpringBoot</description>
 
     <modules>
-        <module>01-1_springmvc-jpa-demo</module>
-        <module>01-2_hello-springboot</module>
+        <module>02-1_springboot-basic</module>
     </modules>
 
 </project>
