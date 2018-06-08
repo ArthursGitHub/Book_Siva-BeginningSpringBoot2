@@ -5,11 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.apress</groupId>
-    <artifactId>2_hello-springboot</artifactId>
+    <artifactId>01-2_hello-springboot</artifactId>
     <packaging>jar</packaging>
     <version>0.0.1-SNAPSHOT</version>
 
-    <name>2 hello-springboot</name>
+    <name>01-2 hello-springboot</name>
 
     <parent>
         <groupId>org.springframework.boot</groupId>

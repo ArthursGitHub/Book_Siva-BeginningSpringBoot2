@@ -10,8 +10,8 @@
     <name>Chapter 01</name>
 
     <modules>
-        <module>1_springmvc-jpa-demo</module>
-        <module>2_hello-springboot</module>
+        <module>01-1_springmvc-jpa-demo</module>
+        <module>01-2_hello-springboot</module>
     </modules>
 
 </project>
