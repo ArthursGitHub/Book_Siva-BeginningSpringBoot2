@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.apress</groupId>
-    <artifactId>05-01_spring-jdbc-demo</artifactId>
+    <artifactId>05-1_spring-jdbc-demo</artifactId>
     <packaging>jar</packaging>
     <version>1.0-SNAPSHOT</version>
 

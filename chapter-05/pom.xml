@@ -12,9 +12,9 @@
     <description>Working with JdbcTemplate</description>
 
     <modules>
-        <module>05-01_spring-jdbc-demo</module>
-        <module>05-02_springboot-jdbc-demo</module>
-        <module>05-03_springboot-flyway-demo</module>
+        <module>05-1_spring-jdbc-demo</module>
+        <module>05-2_springboot-jdbc-demo</module>
+        <module>05-3_springboot-flyway-demo</module>
     </modules>
 
 </project>
