@@ -9,7 +9,7 @@
     <packaging>jar</packaging>
     <version>1.0-SNAPSHOT</version>
 
-    <name>conditional</name>
+    <name>03-1 conditional</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
