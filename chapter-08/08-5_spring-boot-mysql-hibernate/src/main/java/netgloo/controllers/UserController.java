@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class UserController {
 
   @Autowired
-  private UserDao _userDao;
+  private UserDao userDao;
 
 
   @RequestMapping(value = "/save")
@@ -22,7 +22,7 @@ public class UserController {
   public String create(String email, String name) {
     try {
       User user = new User(email, name);
-      _userDao.save(user);
+      userDao.save(user);
     } catch (Exception ex) {
       return ex.getMessage();
     }
@@ -34,7 +34,7 @@ public class UserController {
   public String delete(long id) {
     try {
       User user = new User(id);
-      _userDao.delete(user);
+      userDao.delete(user);
     } catch (Exception ex) {
       return ex.getMessage();
     }
@@ -46,7 +46,7 @@ public class UserController {
   public String getByEmail(String email) {
     String userId;
     try {
-      User user = _userDao.getByEmail(email);
+      User user = userDao.getByEmail(email);
       userId = String.valueOf(user.getId());
     } catch (Exception ex) {
       return "User not found";
