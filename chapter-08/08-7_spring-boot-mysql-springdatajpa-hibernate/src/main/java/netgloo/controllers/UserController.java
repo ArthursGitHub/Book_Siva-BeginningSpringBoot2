@@ -29,18 +29,6 @@ public class UserController {
     return "User succesfully created! (id = " + user.getId() + ")";
   }
 
-  @RequestMapping("/delete")
-  @ResponseBody
-  public String delete(long id) {
-    try {
-      User user = new User(id);
-      userDao.delete(user);
-    } catch (Exception ex) {
-      return "Error deleting the user: " + ex.toString();
-    }
-    return "User successfully deleted!";
-  }
-
   @RequestMapping("/update")
   @ResponseBody
   public String updateUser(long id, String email, String name) {
@@ -53,6 +41,18 @@ public class UserController {
       return "Error updating the user: " + ex.toString();
     }
     return "User successfully updated!";
+  }
+
+  @RequestMapping("/delete")
+  @ResponseBody
+  public String delete(long id) {
+    try {
+      User user = new User(id);
+      userDao.delete(user);
+    } catch (Exception ex) {
+      return "Error deleting the user: " + ex.toString();
+    }
+    return "User successfully deleted!";
   }
 
   @RequestMapping("/get-by-email")
