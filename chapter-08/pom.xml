@@ -14,6 +14,8 @@
     <modules>
         <module>08-1_springboot-jpa-demo</module>
         <module>08-2_springboot-multiple-datasources-demo</module>
+
+        <module>08-7_spring-boot-mysql-springdatajpa-hibernate</module>
     </modules>
 
 </project>
