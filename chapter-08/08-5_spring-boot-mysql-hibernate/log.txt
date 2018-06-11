@@ -1,0 +1,84 @@
+/usr/lib/jvm/jdk1.8.0_152/bin/java -Dmaven.multiModuleProjectDirectory=/home/arthur/IdeaProjects/Book_Siva-BeginningSpringBoot2/chapter-08/08-5_spring-boot-mysql-hibernate -Dmaven.home=/home/arthur/tools/idea-IU-173.4127.27/plugins/maven/lib/maven3 -Dclassworlds.conf=/home/arthur/tools/idea-IU-173.4127.27/plugins/maven/lib/maven3/bin/m2.conf -javaagent:/home/arthur/tools/idea-IU-173.4127.27/lib/idea_rt.jar=35421:/home/arthur/tools/idea-IU-173.4127.27/bin -Dfile.encoding=UTF-8 -classpath /home/arthur/tools/idea-IU-173.4127.27/plugins/maven/lib/maven3/boot/plexus-classworlds-2.5.2.jar org.codehaus.classworlds.Launcher -Didea.version=2017.3.2 org.springframework.boot:spring-boot-maven-plugin:1.2.3.RELEASE:run
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building 08-5 spring-boot-mysql-hibernate 0.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] >>> spring-boot-maven-plugin:1.2.3.RELEASE:run (default-cli) > test-compile @ 08-5_spring-boot-mysql-hibernate >>>
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ 08-5_spring-boot-mysql-hibernate ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ 08-5_spring-boot-mysql-hibernate ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 6 source files to /home/arthur/IdeaProjects/Book_Siva-BeginningSpringBoot2/chapter-08/08-5_spring-boot-mysql-hibernate/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ 08-5_spring-boot-mysql-hibernate ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/arthur/IdeaProjects/Book_Siva-BeginningSpringBoot2/chapter-08/08-5_spring-boot-mysql-hibernate/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ 08-5_spring-boot-mysql-hibernate ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] <<< spring-boot-maven-plugin:1.2.3.RELEASE:run (default-cli) < test-compile @ 08-5_spring-boot-mysql-hibernate <<<
+[INFO] 
+[INFO] --- spring-boot-maven-plugin:1.2.3.RELEASE:run (default-cli) @ 08-5_spring-boot-mysql-hibernate ---
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v1.2.3.RELEASE)
+
+2018-06-11 21:56:02.399  INFO 19215 --- [lication.main()] netgloo.Application                      : Starting Application on Hybris with PID 19215 (/home/arthur/IdeaProjects/Book_Siva-BeginningSpringBoot2/chapter-08/08-5_spring-boot-mysql-hibernate/target/classes started by arthur in /home/arthur/IdeaProjects/Book_Siva-BeginningSpringBoot2/chapter-08/08-5_spring-boot-mysql-hibernate)
+2018-06-11 21:56:02.454  INFO 19215 --- [lication.main()] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@688e4203: startup date [Mon Jun 11 21:56:02 MSK 2018]; root of context hierarchy
+2018-06-11 21:56:03.752  INFO 19215 --- [lication.main()] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'beanNameViewResolver': replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration; factoryMethodName=beanNameViewResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter; factoryMethodName=beanNameViewResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter.class]]
+2018-06-11 21:56:04.739  INFO 19215 --- [lication.main()] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [class org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$f247ef24] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-06-11 21:56:04.765  INFO 19215 --- [lication.main()] trationDelegate$BeanPostProcessorChecker : Bean 'transactionAttributeSource' of type [class org.springframework.transaction.annotation.AnnotationTransactionAttributeSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-06-11 21:56:04.782  INFO 19215 --- [lication.main()] trationDelegate$BeanPostProcessorChecker : Bean 'transactionInterceptor' of type [class org.springframework.transaction.interceptor.TransactionInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-06-11 21:56:04.801  INFO 19215 --- [lication.main()] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.config.internalTransactionAdvisor' of type [class org.springframework.transaction.interceptor.BeanFactoryTransactionAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-06-11 21:56:05.522  INFO 19215 --- [lication.main()] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2018-06-11 21:56:06.128  INFO 19215 --- [lication.main()] o.apache.catalina.core.StandardService   : Starting service Tomcat
+2018-06-11 21:56:06.164  INFO 19215 --- [lication.main()] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.0.20
+2018-06-11 21:56:06.316  INFO 19215 --- [ost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-06-11 21:56:06.321  INFO 19215 --- [ost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3871 ms
+2018-06-11 21:56:07.242  INFO 19215 --- [ost-startStop-1] o.s.b.c.e.ServletRegistrationBean        : Mapping servlet: 'dispatcherServlet' to [/]
+2018-06-11 21:56:07.247  INFO 19215 --- [ost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-06-11 21:56:07.247  INFO 19215 --- [ost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-06-11 21:56:07.356  INFO 19215 --- [lication.main()] o.s.j.d.DriverManagerDataSource          : Loaded JDBC driver: com.mysql.jdbc.Driver
+2018-06-11 21:56:07.905  INFO 19215 --- [lication.main()] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-06-11 21:56:07.916  INFO 19215 --- [lication.main()] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-06-11 21:56:08.017  INFO 19215 --- [lication.main()] org.hibernate.Version                    : HHH000412: Hibernate Core {4.3.8.Final}
+2018-06-11 21:56:08.019  INFO 19215 --- [lication.main()] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2018-06-11 21:56:08.022  INFO 19215 --- [lication.main()] org.hibernate.cfg.Environment            : HHH000021: Bytecode provider name : javassist
+2018-06-11 21:56:08.314  INFO 19215 --- [lication.main()] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2018-06-11 21:56:08.389  INFO 19215 --- [lication.main()] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2018-06-11 21:56:08.511  INFO 19215 --- [lication.main()] o.h.h.i.ast.ASTQueryTranslatorFactory    : HHH000397: Using ASTQueryTranslatorFactory
+2018-06-11 21:56:09.053  INFO 19215 --- [lication.main()] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2018-06-11 21:56:09.067  INFO 19215 --- [lication.main()] o.h.e.t.i.TransactionFactoryInitiator    : HHH000399: Using default transaction strategy (direct JDBC transactions)
+2018-06-11 21:56:09.068  INFO 19215 --- [lication.main()] o.h.h.i.ast.ASTQueryTranslatorFactory    : HHH000397: Using ASTQueryTranslatorFactory
+2018-06-11 21:56:09.092  INFO 19215 --- [lication.main()] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000227: Running hbm2ddl schema export
+Hibernate: drop table if exists users
+Hibernate: create table users (id bigint not null auto_increment, email varchar(80) not null, name varchar(80) not null, primary key (id))
+2018-06-11 21:56:09.410  INFO 19215 --- [lication.main()] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000230: Schema export complete
+2018-06-11 21:56:09.477  INFO 19215 --- [lication.main()] o.s.o.h.HibernateTransactionManager      : Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@2f5c95a5] of Hibernate SessionFactory for HibernateTransactionManager
+2018-06-11 21:56:09.746  INFO 19215 --- [lication.main()] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@688e4203: startup date [Mon Jun 11 21:56:02 MSK 2018]; root of context hierarchy
+2018-06-11 21:56:09.843  INFO 19215 --- [lication.main()] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/user/get-by-email],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String netgloo.controllers.UserController.getByEmail(java.lang.String)
+2018-06-11 21:56:09.844  INFO 19215 --- [lication.main()] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/user/delete],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String netgloo.controllers.UserController.delete(long)
+2018-06-11 21:56:09.844  INFO 19215 --- [lication.main()] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/user/save],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String netgloo.controllers.UserController.create(java.lang.String,java.lang.String)
+2018-06-11 21:56:09.844  INFO 19215 --- [lication.main()] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String netgloo.controllers.MainController.index()
+2018-06-11 21:56:09.849  INFO 19215 --- [lication.main()] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],methods=[],params=[],headers=[],consumes=[],produces=[text/html],custom=[]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest)
+2018-06-11 21:56:09.851  INFO 19215 --- [lication.main()] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-06-11 21:56:09.897  INFO 19215 --- [lication.main()] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-06-11 21:56:09.898  INFO 19215 --- [lication.main()] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-06-11 21:56:09.948  INFO 19215 --- [lication.main()] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-06-11 21:56:10.361  INFO 19215 --- [lication.main()] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-06-11 21:56:10.454  INFO 19215 --- [lication.main()] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2018-06-11 21:56:10.456  INFO 19215 --- [lication.main()] netgloo.Application                      : Started Application in 8.441 seconds (JVM running for 16.018)
