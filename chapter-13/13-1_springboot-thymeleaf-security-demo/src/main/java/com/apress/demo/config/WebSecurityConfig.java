@@ -40,46 +40,46 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
   @Autowired
   public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
     auth
-            .userDetailsService(customUserDetailsService)
-            .passwordEncoder(passwordEncoder());
+        .userDetailsService(customUserDetailsService)
+        .passwordEncoder(passwordEncoder());
   }
 
   @Override
   protected void configure(HttpSecurity http) throws Exception {
     http
-            .headers()
-            .frameOptions().sameOrigin()
-            .and()
-            .authorizeRequests()
-            .antMatchers("/resources/**", "/webjars/**", "/assets/**").permitAll()
-            .antMatchers("/").permitAll()
-            .antMatchers("/admin/**").hasRole("ADMIN")
-            .anyRequest().authenticated()
-            .and()
-            .formLogin()
-            .loginPage("/login")
-            .defaultSuccessUrl("/home")
-            .failureUrl("/login?error")
-            .permitAll()
-            .and()
-            .logout()
-            .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-            .logoutSuccessUrl("/login?logout")
-            .deleteCookies("my-remember-me-cookie")
-            .permitAll()
-            .and()
-            .rememberMe()
-            //.key("my-secure-key")
-            .rememberMeCookieName("my-remember-me-cookie")
-            .tokenRepository(persistentTokenRepository())
-            .tokenValiditySeconds(24 * 60 * 60)
-            .and()
-            .exceptionHandling()
+        .headers()
+        .frameOptions().sameOrigin()
+        .and()
+        .authorizeRequests()
+        .antMatchers("/resources/**", "/webjars/**", "/assets/**").permitAll()
+        .antMatchers("/").permitAll()
+        .antMatchers("/admin/**").hasRole("ADMIN")
+        .anyRequest().authenticated()
+        .and()
+        .formLogin()
+        .loginPage("/login")
+        .defaultSuccessUrl("/home")
+        .failureUrl("/login?error")
+        .permitAll()
+        .and()
+        .logout()
+        .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+        .logoutSuccessUrl("/login?logout")
+        .deleteCookies("my-remember-me-cookie")
+        .permitAll()
+        .and()
+        .rememberMe()
+        //.key("my-secure-key")
+        .rememberMeCookieName("my-remember-me-cookie")
+        .tokenRepository(persistentTokenRepository())
+        .tokenValiditySeconds(24 * 60 * 60)
+        .and()
+        .exceptionHandling()
     //.accessDeniedPage("/403")
     ;
   }
 
-  PersistentTokenRepository persistentTokenRepository() {
+  private PersistentTokenRepository persistentTokenRepository() {
     JdbcTokenRepositoryImpl tokenRepositoryImpl = new JdbcTokenRepositoryImpl();
     tokenRepositoryImpl.setDataSource(dataSource);
     return tokenRepositoryImpl;
