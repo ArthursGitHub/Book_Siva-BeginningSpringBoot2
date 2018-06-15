@@ -5,25 +5,17 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-/**
- * @author Siva
- *
- */
-
 @SpringBootApplication
-public class SpringbootEssentialsApplication implements CommandLineRunner
-{
-	@Autowired
-	private DataSourceConfig dataSourceConfig;
-	
-	public static void main(String[] args)
-	{
-		SpringApplication.run(SpringbootEssentialsApplication.class, args);
-	}
+public class SpringbootEssentialsApplication implements CommandLineRunner {
+  @Autowired
+  private DataSourceConfig dataSourceConfig;
 
-	@Override
-	public void run(String... args) throws Exception
-	{
-		System.err.println(dataSourceConfig);
-	}
+  public static void main(String[] args) {
+    SpringApplication.run(SpringbootEssentialsApplication.class, args);
+  }
+
+  @Override
+  public void run(String... args) throws Exception {
+    System.err.println(dataSourceConfig);
+  }
 }
