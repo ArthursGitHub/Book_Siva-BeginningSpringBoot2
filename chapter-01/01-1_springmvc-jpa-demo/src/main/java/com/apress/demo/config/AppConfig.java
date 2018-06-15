@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.apress.demo.config;
 
 import java.util.Properties;
@@ -27,79 +24,69 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-/**
- * @author Siva
- *
- */
 @Configuration
 @EnableTransactionManagement
-@EnableJpaRepositories(basePackages="com.apress.demo.repositories")
-@PropertySource(value = { "classpath:application.properties" })
+@EnableJpaRepositories(basePackages = "com.apress.demo.repositories")
+@PropertySource(value = {"classpath:application.properties"})
 public class AppConfig {
 
-	@Autowired
-	private Environment env;
+  @Autowired
+  private Environment env;
 
-	@Bean
-	public static PropertySourcesPlaceholderConfigurer placeHolderConfigurer()
-	{
-		return new PropertySourcesPlaceholderConfigurer();
-	}
-	
-	@Bean
-	public PlatformTransactionManager transactionManager()
-	{
-		EntityManagerFactory factory = entityManagerFactory().getObject();
-		return new JpaTransactionManager(factory);
-	}
+  @Bean
+  public static PropertySourcesPlaceholderConfigurer placeHolderConfigurer() {
+    return new PropertySourcesPlaceholderConfigurer();
+  }
 
-	@Bean
-	public LocalContainerEntityManagerFactoryBean entityManagerFactory()
-	{
-		LocalContainerEntityManagerFactoryBean factory = new LocalContainerEntityManagerFactoryBean();
+  @Bean
+  public PlatformTransactionManager transactionManager() {
+    EntityManagerFactory factory = entityManagerFactory().getObject();
+    return new JpaTransactionManager(factory);
+  }
 
-		HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
-		vendorAdapter.setShowSql(Boolean.TRUE);
+  @Bean
+  public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
+    LocalContainerEntityManagerFactoryBean factory = new LocalContainerEntityManagerFactoryBean();
 
-		factory.setDataSource(dataSource());
-		factory.setJpaVendorAdapter(vendorAdapter);
-		factory.setPackagesToScan(env.getProperty("packages-to-scan"));
+    HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
+    vendorAdapter.setShowSql(Boolean.TRUE);
 
-		Properties jpaProperties = new Properties();
-		jpaProperties.put("hibernate.hbm2ddl.auto", env.getProperty("hibernate.hbm2ddl.auto"));
-		factory.setJpaProperties(jpaProperties);
+    factory.setDataSource(dataSource());
+    factory.setJpaVendorAdapter(vendorAdapter);
+    factory.setPackagesToScan(env.getProperty("packages-to-scan"));
 
-		factory.afterPropertiesSet();
-		factory.setLoadTimeWeaver(new InstrumentationLoadTimeWeaver());
-		return factory;
-	}
+    Properties jpaProperties = new Properties();
+    jpaProperties.put("hibernate.hbm2ddl.auto", env.getProperty("hibernate.hbm2ddl.auto"));
+    factory.setJpaProperties(jpaProperties);
 
-	@Bean
-	public HibernateExceptionTranslator hibernateExceptionTranslator()
-	{
-		return new HibernateExceptionTranslator();
-	}
-	
-	@Bean
-	public DataSource dataSource()
-	{
-		BasicDataSource dataSource = new BasicDataSource();
-		dataSource.setDriverClassName(env.getProperty("jdbc.driverClassName"));
-		dataSource.setUrl(env.getProperty("jdbc.url"));
-		dataSource.setUsername(env.getProperty("jdbc.username"));
-		dataSource.setPassword(env.getProperty("jdbc.password"));
-		return dataSource;
-	}
-	
-	@Bean
-	public DataSourceInitializer dataSourceInitializer(DataSource dataSource) 
-	{
-		DataSourceInitializer dataSourceInitializer = new DataSourceInitializer();
-		dataSourceInitializer.setDataSource(dataSource);
-		ResourceDatabasePopulator databasePopulator = new ResourceDatabasePopulator();
-		databasePopulator.addScript(new ClassPathResource(env.getProperty("init-scripts")));
-		dataSourceInitializer.setDatabasePopulator(databasePopulator);
-		dataSourceInitializer.setEnabled(Boolean.parseBoolean(env.getProperty("init-db", "false")));
-		return dataSourceInitializer;
-	}	
+    factory.afterPropertiesSet();
+    factory.setLoadTimeWeaver(new InstrumentationLoadTimeWeaver());
+    return factory;
+  }
+
+  @Bean
+  public HibernateExceptionTranslator hibernateExceptionTranslator() {
+    return new HibernateExceptionTranslator();
+  }
+
+  @Bean
+  public DataSource dataSource() {
+    BasicDataSource dataSource = new BasicDataSource();
+    dataSource.setDriverClassName(env.getProperty("jdbc.driverClassName"));
+    dataSource.setUrl(env.getProperty("jdbc.url"));
+    dataSource.setUsername(env.getProperty("jdbc.username"));
+    dataSource.setPassword(env.getProperty("jdbc.password"));
+    return dataSource;
+  }
+
+  @Bean
+  public DataSourceInitializer dataSourceInitializer(DataSource dataSource) {
+    DataSourceInitializer dataSourceInitializer = new DataSourceInitializer();
+    dataSourceInitializer.setDataSource(dataSource);
+    ResourceDatabasePopulator databasePopulator = new ResourceDatabasePopulator();
+    databasePopulator.addScript(new ClassPathResource(env.getProperty("init-scripts")));
+    dataSourceInitializer.setDatabasePopulator(databasePopulator);
+    dataSourceInitializer.setEnabled(Boolean.parseBoolean(env.getProperty("init-db", "false")));
+    return dataSourceInitializer;
+  }
 }
