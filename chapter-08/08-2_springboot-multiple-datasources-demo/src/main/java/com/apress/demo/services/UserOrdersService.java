@@ -1,4 +1,3 @@
-
 package com.apress.demo.services;
 
 import java.util.List;
@@ -12,28 +11,21 @@ import com.apress.demo.orders.repositories.OrderRepository;
 import com.apress.demo.security.entities.User;
 import com.apress.demo.security.repositories.UserRepository;
 
-/**
- * @author Siva
- *
- */
 @Service
-public class UserOrdersService
-{
-	@Autowired
-	private OrderRepository orderRepository;
-	
-	@Autowired
-	private UserRepository userRepository;
-	
-	@Transactional(transactionManager="securityTransactionManager")
-	public List<User> getUsers()
-	{
-		return userRepository.findAll();
-	}
-	
-	@Transactional(transactionManager="ordersTransactionManager")
-	public List<Order> getOrders()
-	{
-		return orderRepository.findAll();
-	}
+public class UserOrdersService {
+  @Autowired
+  private OrderRepository orderRepository;
+
+  @Autowired
+  private UserRepository userRepository;
+
+  @Transactional(transactionManager = "securityTransactionManager")
+  public List<User> getUsers() {
+    return userRepository.findAll();
+  }
+
+  @Transactional(transactionManager = "ordersTransactionManager")
+  public List<Order> getOrders() {
+    return orderRepository.findAll();
+  }
 }

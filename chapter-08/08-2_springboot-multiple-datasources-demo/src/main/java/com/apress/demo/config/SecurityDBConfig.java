@@ -21,72 +21,62 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 
-/**
- * @author Siva
- * 
- */
 @Configuration
 @EnableJpaRepositories(
-		basePackages = "com.apress.demo.security.repositories",
+        basePackages = "com.apress.demo.security.repositories",
         entityManagerFactoryRef = "securityEntityManagerFactory",
         transactionManagerRef = "securityTransactionManager"
 )
-public class SecurityDBConfig
-{
-	@Autowired
-	private Environment env;
-		
-    @Bean
-    @ConfigurationProperties(prefix="datasource.security")
-    public DataSourceProperties securityDataSourceProperties() {
-        return new DataSourceProperties();
-    }
-    
-    @Bean
-    public DataSource securityDataSource() {
-        DataSourceProperties securityDataSourceProperties = securityDataSourceProperties();
-		return DataSourceBuilder.create()
-        			.driverClassName(securityDataSourceProperties.getDriverClassName())
-        			.url(securityDataSourceProperties.getUrl())
-        			.username(securityDataSourceProperties.getUsername())
-        			.password(securityDataSourceProperties.getPassword())
-        			.build();
-    }
-    
-    @Bean
-    public PlatformTransactionManager securityTransactionManager()
-    {
-        EntityManagerFactory factory = securityEntityManagerFactory().getObject();
-        return new JpaTransactionManager(factory);
-    }
+public class SecurityDBConfig {
+  @Autowired
+  private Environment env;
 
-    @Bean
-    public LocalContainerEntityManagerFactoryBean securityEntityManagerFactory()
-    {
-        LocalContainerEntityManagerFactoryBean factory = new LocalContainerEntityManagerFactoryBean();
-        factory.setDataSource(securityDataSource());
-        factory.setPackagesToScan(new String[]{"com.apress.demo.security.entities"});
-        factory.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
-        
-        Properties jpaProperties = new Properties();
-        jpaProperties.put("hibernate.hbm2ddl.auto", env.getProperty("spring.jpa.hibernate.ddl-auto"));
-        jpaProperties.put("hibernate.show-sql", env.getProperty("spring.jpa.show-sql"));
-        factory.setJpaProperties(jpaProperties);
-        
-        return factory;
-    }
-    
-    @Bean
-	public DataSourceInitializer securityDataSourceInitializer() 
-	{
-		DataSourceInitializer dataSourceInitializer = new DataSourceInitializer();
-		dataSourceInitializer.setDataSource(securityDataSource());
-		ResourceDatabasePopulator databasePopulator = new ResourceDatabasePopulator();
-		databasePopulator.addScript(new ClassPathResource("security-data.sql"));
-		dataSourceInitializer.setDatabasePopulator(databasePopulator);
-		dataSourceInitializer.setEnabled(env.getProperty("datasource.security.initialize", Boolean.class, false));
-		return dataSourceInitializer;
-	}
-    
-    
+  @Bean
+  @ConfigurationProperties(prefix = "datasource.security")
+  public DataSourceProperties securityDataSourceProperties() {
+    return new DataSourceProperties();
+  }
+
+  @Bean
+  public DataSource securityDataSource() {
+    DataSourceProperties securityDataSourceProperties = securityDataSourceProperties();
+    return DataSourceBuilder.create()
+            .driverClassName(securityDataSourceProperties.getDriverClassName())
+            .url(securityDataSourceProperties.getUrl())
+            .username(securityDataSourceProperties.getUsername())
+            .password(securityDataSourceProperties.getPassword())
+            .build();
+  }
+
+  @Bean
+  public PlatformTransactionManager securityTransactionManager() {
+    EntityManagerFactory factory = securityEntityManagerFactory().getObject();
+    return new JpaTransactionManager(factory);
+  }
+
+  @Bean
+  public LocalContainerEntityManagerFactoryBean securityEntityManagerFactory() {
+    LocalContainerEntityManagerFactoryBean factory = new LocalContainerEntityManagerFactoryBean();
+    factory.setDataSource(securityDataSource());
+    factory.setPackagesToScan(new String[]{"com.apress.demo.security.entities"});
+    factory.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
+
+    Properties jpaProperties = new Properties();
+    jpaProperties.put("hibernate.hbm2ddl.auto", env.getProperty("spring.jpa.hibernate.ddl-auto"));
+    jpaProperties.put("hibernate.show-sql", env.getProperty("spring.jpa.show-sql"));
+    factory.setJpaProperties(jpaProperties);
+
+    return factory;
+  }
+
+  @Bean
+  public DataSourceInitializer securityDataSourceInitializer() {
+    DataSourceInitializer dataSourceInitializer = new DataSourceInitializer();
+    dataSourceInitializer.setDataSource(securityDataSource());
+    ResourceDatabasePopulator databasePopulator = new ResourceDatabasePopulator();
+    databasePopulator.addScript(new ClassPathResource("security-data.sql"));
+    dataSourceInitializer.setDatabasePopulator(databasePopulator);
+    dataSourceInitializer.setEnabled(env.getProperty("datasource.security.initialize", Boolean.class, false));
+    return dataSourceInitializer;
+  }
 }

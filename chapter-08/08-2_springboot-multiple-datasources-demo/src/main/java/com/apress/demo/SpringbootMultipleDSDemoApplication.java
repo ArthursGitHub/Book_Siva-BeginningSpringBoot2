@@ -7,20 +7,13 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerA
 import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-/**
- * @author Siva
- *
- */
-
 @SpringBootApplication(
-		exclude = { DataSourceAutoConfiguration.class, 
-					HibernateJpaAutoConfiguration.class,
-					DataSourceTransactionManagerAutoConfiguration.class })
+        exclude = {DataSourceAutoConfiguration.class,
+                HibernateJpaAutoConfiguration.class,
+                DataSourceTransactionManagerAutoConfiguration.class})
 @EnableTransactionManagement
-public class SpringbootMultipleDSDemoApplication
-{
-	public static void main(String[] args)
-	{
-		SpringApplication.run(SpringbootMultipleDSDemoApplication.class, args);
-	}
+public class SpringbootMultipleDSDemoApplication {
+  public static void main(String[] args) {
+    SpringApplication.run(SpringbootMultipleDSDemoApplication.class, args);
+  }
 }

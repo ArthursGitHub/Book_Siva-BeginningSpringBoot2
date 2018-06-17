@@ -17,36 +17,29 @@ import java.util.List;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
-/**
- * @author Siva
- *
- */
-
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = SpringbootMultipleDSDemoApplication.class)
-public class SpringbootMultipleDSDemoApplicationTests
-{
+public class SpringbootMultipleDSDemoApplicationTests {
 
-	@Autowired
-	private UserRepository userRepository;
-	
-	@Autowired
-	private OrderRepository orderRepository;
-	
-	@Test
-	public void findAllUsers()  {
-		List<User> users = userRepository.findAll();
-		assertNotNull(users);
-		assertTrue(!users.isEmpty());
-		
-	}
-	
-	@Test
-	public void findAllOrders()  {
-		List<Order> orders = orderRepository.findAll();
-		assertNotNull(orders);
-		assertTrue(!orders.isEmpty());
-		
-	}
+  @Autowired
+  private UserRepository userRepository;
 
+  @Autowired
+  private OrderRepository orderRepository;
+
+  @Test
+  public void findAllUsers() {
+    List<User> users = userRepository.findAll();
+    assertNotNull(users);
+    assertTrue(!users.isEmpty());
+
+  }
+
+  @Test
+  public void findAllOrders() {
+    List<Order> orders = orderRepository.findAll();
+    assertNotNull(orders);
+    assertTrue(!orders.isEmpty());
+
+  }
 }
