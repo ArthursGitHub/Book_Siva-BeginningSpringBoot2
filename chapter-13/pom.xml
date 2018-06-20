@@ -14,6 +14,7 @@
     <modules>
         <module>13-1_springboot-thymeleaf-security-demo</module>
         <module>13-2_springboot-rest-api-security-demo</module>
+        <module>13-5_springboot-thymeleaf-security-demo</module>
     </modules>
 
 </project>
