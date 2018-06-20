@@ -47,7 +47,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
   @Override
   protected void configure(HttpSecurity http) throws Exception {
     http
-        .headers()
+      .headers()
         .frameOptions().sameOrigin()
         .and()
         .authorizeRequests()
@@ -55,26 +55,30 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         .antMatchers("/").permitAll()
         .antMatchers("/admin/**").hasRole("ADMIN")
         .anyRequest().authenticated()
-        .and()
-        .formLogin()
+      .and()
+
+      .formLogin()
         .loginPage("/login")
         .defaultSuccessUrl("/home")
         .failureUrl("/login?error")
         .permitAll()
-        .and()
-        .logout()
+      .and()
+
+      .logout()
         .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
         .logoutSuccessUrl("/login?logout")
         .deleteCookies("my-remember-me-cookie")
         .permitAll()
-        .and()
-        .rememberMe()
+      .and()
+
+      .rememberMe()
         //.key("my-secure-key")
         .rememberMeCookieName("my-remember-me-cookie")
         .tokenRepository(persistentTokenRepository())
         .tokenValiditySeconds(24 * 60 * 60)
-        .and()
-        .exceptionHandling()
+      .and()
+
+      .exceptionHandling()
     //.accessDeniedPage("/403")
     ;
   }
